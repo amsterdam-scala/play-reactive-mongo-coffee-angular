@@ -1,6 +1,1 @@
-
-
-directivesModule.directive('appVersion', ['version', (version) ->
-        (scope, elm, attrs) ->
-            elm.text(version);
-    ])
+angular.module('myApp').directive('appVersion', ['version', (version) -> (scope, elm) -> elm.text(version)])

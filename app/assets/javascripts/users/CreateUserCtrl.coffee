@@ -19,4 +19,4 @@ class CreateUserCtrl
                 @$log.error "Unable to create User: #{error}"
             )
 
-controllersModule.controller('CreateUserCtrl', CreateUserCtrl)
+angular.module('myApp').controller('CreateUserCtrl', CreateUserCtrl)

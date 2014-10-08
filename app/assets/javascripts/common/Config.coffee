@@ -1,2 +1,1 @@
-
-commonModule.value('version', '0.1')
+angular.module('myApp').value('version', '0.1')

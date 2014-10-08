@@ -37,4 +37,4 @@ class UserService
             )
         deferred.promise
 
-servicesModule.service('UserService', UserService)
+angular.module('myApp').service('UserService', UserService)

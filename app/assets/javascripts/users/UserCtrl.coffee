@@ -20,4 +20,4 @@ class UserCtrl
             )
 
 
-controllersModule.controller('UserCtrl', UserCtrl)
+angular.module('myApp').controller('UserCtrl', UserCtrl)
