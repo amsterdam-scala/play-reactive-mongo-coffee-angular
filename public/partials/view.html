@@ -33,17 +33,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="usr in uc.users | filter:searchText">
+                <tr ng-repeat="user in uc.users | filter:searchText">
                     <td>
-                        {{ usr.firstName }}
+                        {{ user.firstName }}
                     </td>
                     <td>
-                        {{ usr.lastName }}
+                        {{ user.lastName }}
                     </td>
                     <td>
-                        {{ usr.age }}
+                        {{ user.age }}
                     </td>
-                    <td><a ng-href="/#/users/delete/{{usr.firstName}}">X</a></td>
+                    <td><button ng-click="uc.deleteUser(user)">X</button></td>
                 </tr>
                 <tr ng-hide="uc.users.length">
                     <td colspan="3">

@@ -12,8 +12,6 @@ import javax.inject.Singleton
 import play.api.mvc._
 import play.api.libs.json._
 
-import scala.util.{Failure, Success}
-
 /**
  * The Users controllers encapsulates the Rest endpoints and the interaction with the MongoDB, via ReactiveMongo
  * play plugin. This provides a non-blocking driver for mongoDB as well as some useful additions for handling JSon.
