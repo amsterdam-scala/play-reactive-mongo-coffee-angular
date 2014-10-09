@@ -1,5 +1,7 @@
 package controllers
 
+import java.util.UUID
+
 import play.modules.reactivemongo.MongoController
 import play.modules.reactivemongo.json.collection.JSONCollection
 import scala.concurrent.Future
@@ -9,6 +11,8 @@ import org.slf4j.{LoggerFactory, Logger}
 import javax.inject.Singleton
 import play.api.mvc._
 import play.api.libs.json._
+
+import scala.util.{Failure, Success}
 
 /**
  * The Users controllers encapsulates the Rest endpoints and the interaction with the MongoDB, via ReactiveMongo
@@ -35,6 +39,7 @@ class Users extends Controller with MongoController {
 
   import models._
   import models.JsonFormats._
+
 
   def createUser = Action.async(parse.json) {
     request =>
@@ -80,4 +85,9 @@ class Users extends Controller with MongoController {
     }
   }
 
+  def deleteUser(firstName: String) = Action.async {
+    collection.remove(Json.obj("firstName" -> firstName)).map {
+      lastError => Ok(s"User ${firstName} removed with $lastError")
+    }
+  }
 }

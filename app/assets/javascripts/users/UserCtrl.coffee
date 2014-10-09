@@ -6,6 +6,8 @@ class UserCtrl
         @users = []
         @getAllUsers()
 
+    remove: (user) ->  alert("hier!")
+
     getAllUsers: () ->
         @$log.debug "getAllUsers()"
 

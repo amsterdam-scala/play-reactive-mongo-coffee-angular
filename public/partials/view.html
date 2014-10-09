@@ -29,6 +29,7 @@
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Age</th>
+                    <th>Remove</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,7 @@
                     <td>
                         {{ usr.age }}
                     </td>
+                    <td><a ng-href="/#/users/delete/{{usr.firstName}}">X</a></td>
                 </tr>
                 <tr ng-hide="uc.users.length">
                     <td colspan="3">

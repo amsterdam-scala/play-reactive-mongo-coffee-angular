@@ -5,12 +5,13 @@
 # ~~~~
 
 # Single endpoint for serving AngularJS
-GET     /                           @controllers.Application.index
-GET     /randomUUID                 @controllers.Application.randomUUID
+GET         /                    @controllers.Application.index
+GET         /randomUUID          @controllers.Application.randomUUID
 
 # User management API
-GET     /users                      @controllers.Users.findUsers
-POST    /user                       @controllers.Users.createUser
+GET         /users               @controllers.Users.findUsers
+POST        /user                @controllers.Users.createUser
+DELETE      /user/delete/:firstName     @controllers.Users.deleteUser(firstName: String)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file        controllers.Assets.at(path="/public", file)

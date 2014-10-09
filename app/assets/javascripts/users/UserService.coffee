@@ -22,6 +22,8 @@ class UserService
             )
         deferred.promise
 
+    deleteUser: (firstName) -> @$http.delete('/user/delete/' + firstName)
+
     createUser: (user) ->
         @$log.debug "createUser #{angular.toJson(user, true)}"
         deferred = @$q.defer()
