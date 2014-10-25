@@ -1,3 +1,5 @@
+A clone of Alex Lashford template [https://github.com/lashford/modern-web-template](lashford/modern-web-template)
+
 Modern Web Template
 ===========
 
