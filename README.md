@@ -32,8 +32,8 @@ Getting Started
 ----------
 
 Your development environment will require:
-*  SBT / Play see [here]() for installation instructions.
-*  MongoDB see [here]() for installation instructions.
+*  SBT / Play see [here](http://www.scala-sbt.org/0.13/tutorial/Setup.html) for installation instructions.
+*  MongoDB see [here](http://docs.mongodb.org/manual/installation/) for installation instructions.
 
 Once the prerequisites have been installed, you will be able to execute the following from a terminal.
 
