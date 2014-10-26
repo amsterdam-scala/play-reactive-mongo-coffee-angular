@@ -1,4 +1,4 @@
-A clone of Alex Lashford template [https://github.com/lashford/modern-web-template](lashford/modern-web-template)
+[![Build Status](https://travis-ci.org/amsterdam-scala/play-reactive-mongo-coffee-angular.svg?branch=master)](https://travis-ci.org/amsterdam-scala/play-reactive-mongo-coffee-angular) A clone of Alex Lashford template [https://github.com/lashford/modern-web-template](lashford/modern-web-template)
 
 Modern Web Template
 ===========
