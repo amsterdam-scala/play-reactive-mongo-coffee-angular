@@ -4,9 +4,11 @@ import java.util.concurrent.TimeUnit
 
 import org.specs2.mutable.Specification
 import play.api.libs.json.Json
-import play.api.test.{FakeRequest, FakeApplication}
-import play.api.test.Helpers.{BAD_REQUEST, CREATED, POST, contentAsString, route, running}
+import play.api.test.{FakeApplication, FakeRequest}
 
+//import play.api.test.Helpers.{BAD_REQUEST, CREATED, POST, contentAsString, route, running}
+
+import play.api.test.Helpers._
 
 import scala.concurrent.Await
 import scala.concurrent.duration.FiniteDuration
