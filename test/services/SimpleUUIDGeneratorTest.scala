@@ -1,21 +1,21 @@
 package services
 
-import org.specs2.mutable._
+import org.specs2.mutable.Specification
 
 /**
-  * Unit tests for the service itself. We would expect that the majority of unit tests would be on components like
-  * this.
-  */
+ * Unit tests for the service itself. We would expect that the
+ * majority of unit tests would be on components like this.
+ */
 class SimpleUUIDGeneratorTest extends Specification {
 
-   "SimpleUUIDGenerator" should {
+  "SimpleUUIDGenerator" should {
 
-     "generate a UUID" in {
-       val uuidGenerator = new SimpleUUIDGenerator
+    "generate a UUID" in {
+      val uuidGenerator = new SimpleUUIDGenerator
 
-       val uuid = uuidGenerator.generate
+      val uuid = uuidGenerator.generate
 
-       uuid mustNotEqual null
-     }
-   }
- }
+      uuid mustNotEqual null
+    }
+  }
+}

@@ -1,12 +1,11 @@
 package controllers
 
-import org.specs2.mock.Mockito
-import org.specs2.mutable._
-
-import play.api.test._
-import play.api.test.Helpers._
-import services.UUIDGenerator
 import java.util.UUID
+
+import org.specs2.mock.Mockito
+import org.specs2.mutable.Specification
+import play.api.test.FakeRequest
+import services.UUIDGenerator
 
 /**
  * We focus here on testing the controller only - not the infrastructure in front or behind it. Using dependency
@@ -16,9 +15,9 @@ import java.util.UUID
  * route is configured properly.
  */
 class ApplicationUnitTest extends Specification with Mockito {
-  
+
   "Application" should {
-    
+
     "invoke the UUID generator" in {
       val uuidGenerator = mock[UUIDGenerator]
       val application = new controllers.Application(uuidGenerator)

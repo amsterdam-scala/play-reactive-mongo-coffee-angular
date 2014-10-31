@@ -1,16 +1,16 @@
 package controllers
 
-import java.util.UUID
+import javax.inject.Singleton
 
+import org.slf4j.{Logger, LoggerFactory}
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
+import play.api.libs.json.{JsArray, Json}
+import play.api.mvc.{Action, Controller}
 import play.modules.reactivemongo.MongoController
 import play.modules.reactivemongo.json.collection.JSONCollection
-import scala.concurrent.Future
 import reactivemongo.api.Cursor
-import play.api.libs.concurrent.Execution.Implicits.defaultContext
-import org.slf4j.{LoggerFactory, Logger}
-import javax.inject.Singleton
-import play.api.mvc._
-import play.api.libs.json._
+
+import scala.concurrent.Future
 
 /**
  * The Users controllers encapsulates the Rest endpoints and the interaction with the MongoDB, via ReactiveMongo
@@ -35,22 +35,23 @@ class Users extends Controller with MongoController {
   // Using case classes + Json Writes and Reads //
   // ------------------------------------------ //
 
-  import models._
-  import models.JsonFormats._
+  import models.JsonFormats.userFormat
+
+  import models.User
 
 
   def createUser = Action.async(parse.json) {
     request =>
-    /*
-     * request.body is a JsValue.
-     * There is an implicit Writes that turns this JsValue as a JsObject,
-     * so you can call insert() with this JsValue.
-     * (insert() takes a JsObject as parameter, or anything that can be
-     * turned into a JsObject using a Writes.)
-     */
+      /*
+       * request.body is a JsValue.
+       * There is an implicit Writes that turns this JsValue as a JsObject,
+       * so you can call insert() with this JsValue.
+       * (insert() takes a JsObject as parameter, or anything that can be
+       * turned into a JsObject using a Writes.)
+       */
       request.body.validate[User].map {
         user =>
-        // `user` is an instance of the case class `models.User`
+          // `user` is an instance of the case class `models.User`
           collection.insert(user).map {
             lastError =>
               logger.debug(s"Successfully inserted with LastError: $lastError")
@@ -85,7 +86,7 @@ class Users extends Controller with MongoController {
 
   def deleteUser(firstName: String) = Action.async {
     collection.remove(Json.obj("firstName" -> firstName)).map {
-      lastError => Ok(s"User ${firstName} removed with $lastError")
+      lastError => Ok(s"User $firstName removed with $lastError")
     }
   }
 }

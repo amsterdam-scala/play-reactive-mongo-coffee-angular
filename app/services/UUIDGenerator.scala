@@ -1,7 +1,7 @@
 package services
 
-import javax.inject.Singleton
 import java.util.UUID
+import javax.inject.Singleton
 
 /**
  * A type declaring the interface that will be injectable.

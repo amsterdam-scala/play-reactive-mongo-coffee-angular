@@ -1,13 +1,15 @@
 package controllers
 
-import scala.concurrent._
-import duration._
-import org.specs2.mutable._
-
-import play.api.libs.json._
-import play.api.test._
-import play.api.test.Helpers._
 import java.util.concurrent.TimeUnit
+
+import org.specs2.mutable.Specification
+import play.api.libs.json.Json
+import play.api.test.{FakeRequest, FakeApplication}
+import play.api.test.Helpers.{BAD_REQUEST, CREATED, POST, contentAsString, route, running}
+
+
+import scala.concurrent.Await
+import scala.concurrent.duration.FiniteDuration
 
 
 /**
