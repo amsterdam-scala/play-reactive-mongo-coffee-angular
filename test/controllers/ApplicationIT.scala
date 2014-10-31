@@ -1,9 +1,11 @@
 package controllers
 
 import org.specs2.mutable.Specification
-import play.api.test.Helpers.{GET, OK, contentType, route, running, status}
-import play.api.test.{FakeApplication, FakeRequest}
 
+//import play.api.test.Helpers.{GET, OK, contentType,  running, status}
+
+import play.api.test.Helpers._
+import play.api.test.{FakeApplication, FakeRequest}
 
 /**
  * You can mock out a whole application including requests, plugins etc.

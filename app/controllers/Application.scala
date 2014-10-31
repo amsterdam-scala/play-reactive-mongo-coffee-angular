@@ -6,7 +6,6 @@ import org.slf4j.{Logger, LoggerFactory}
 
 import play.api.mvc.{Action, Controller}
 import services.UUIDGenerator
-import play.api.mvc._
 
 /**
  * Instead of declaring an object of Application as per the template project, we must declare a class given that
