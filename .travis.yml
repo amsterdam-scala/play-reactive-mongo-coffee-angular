@@ -8,6 +8,7 @@ branches:
 notifications:
   email:
     recipients:
+services:
+  - mongodb
 jdk:
   - oraclejdk8
-
